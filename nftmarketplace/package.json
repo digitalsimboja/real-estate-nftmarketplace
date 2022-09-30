@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.10",
+    "@chakra-ui/icons": "^2.0.10",
     "@chakra-ui/react": "^2.3.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
@@ -21,13 +23,13 @@
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.7.1",
     "framer-motion": "^6",
+    "graphql": "^16.6.0",
     "hardhat": "^2.11.2",
     "ipfs-http-client": "^58.0.1",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "wagmi": "^0.6.7",
-    "web3modal": "^1.9.9"
+    "wagmi": "^0.6.7"
   },
   "devDependencies": {
     "eslint": "8.24.0",
