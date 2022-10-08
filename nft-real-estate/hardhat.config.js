@@ -1,38 +1,15 @@
-/* hardhat.config.js */
-require("@nomiclabs/hardhat-waffle");
-require('dotenv').config()
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config({ path: ".env" });
 
-const PRVATE_KEY = process.env.PRVATE_KEY
-
-// infuraId is optional if you are using Infura RPC
-const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
+const QUICKNODE_HTTP_URL = process.env.QUICKNODE_HTTP_URL;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 module.exports = {
-  defaultNetwork: "hardhat",
+  solidity: "0.8.4",
   networks: {
-    hardhat: {
-      chainId: 1337
+    goerli: {
+      url: QUICKNODE_HTTP_URL,
+      accounts: [PRIVATE_KEY],
     },
-    mumbai: {
-      // Infura
-      // url: `https://polygon-mumbai.infura.io/v3/${infuraId}`
-      url: "https://rpc-mumbai.matic.today",
-      accounts: [PRVATE_KEY]
-    },
-    matic: {
-      // Infura
-      // url: `https://polygon-mainnet.infura.io/v3/${infuraId}`,
-      url: "https://rpc-mainnet.maticvigil.com",
-      accounts: [PRVATE_KEY]
-    }
   },
-  solidity: {
-    version: "0.8.4",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200
-      }
-    }
-  }
 };

@@ -3,14 +3,13 @@ pragma solidity ^0.8.4;
 
 
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 import "hardhat/console.sol";
 
-contract NFTRealEstate is ERC721URIStorage, ReentrancyGuard {
+contract NFTRealEstateMarketplace is ReentrancyGuard {
     using Counters for Counters.Counter;
     using SafeMath for uint256;
     Counters.Counter private _tokenTotalListings;  // Starts from 0
@@ -75,7 +74,7 @@ contract NFTRealEstate is ERC721URIStorage, ReentrancyGuard {
     );
 
     /* === CONSTRUCTOR === */
-    constructor(address regulatorAccount) ERC721("Real Estate NFT", "RENT") {
+    constructor(address regulatorAccount) {
         // Initialize the owner to be the account that deployed the contract
         // Initialize the regulators account
         owner = payable(msg.sender);
