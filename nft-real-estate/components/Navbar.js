@@ -33,7 +33,7 @@ export default function Navbar() {
               fontWeight={"bold"}
               color={useColorModeValue("purple.200", "gray.200")}
             >
-              Eth-NFTMarketplace
+              NFT Real Estate
             </Text>
           </Link>
         </Flex>
