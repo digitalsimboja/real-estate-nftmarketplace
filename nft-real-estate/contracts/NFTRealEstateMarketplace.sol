@@ -129,7 +129,7 @@ contract NFTRealEstateMarketplace is ReentrancyGuard {
 
         uint256 requiredAmount = listing.price.add(realEstateCommisionCalculated).add(realEstateCommisionCalculated);
 
-        require(msg.value == requiredAmount, "Insuffient amount sent");
+        require(msg.value >= requiredAmount, "Insuffient amount sent");
 
         // transfer ownership
         listing.owner = msg.sender;
@@ -269,6 +269,23 @@ contract NFTRealEstateMarketplace is ReentrancyGuard {
         );
 
     }
+
+    function getAllListingCounts() public view returns (uint256) {
+        uint256 totalListingCount = _tokenTotalListings.current();
+        return totalListingCount;
+    }
+
+    function getListingsSold() public view returns (uint256) {
+        uint256 totalListingsSold = _estateListingSold.current();
+
+        return totalListingsSold;
+    }
+
+    // To Do
+    // function getUserWithMaximumListing() public view returns (uint256) {
+        
+    // }
+
 
 
 }
