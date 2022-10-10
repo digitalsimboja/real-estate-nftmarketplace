@@ -15,8 +15,6 @@ contract NFTRealEstateMarketplace is ReentrancyGuard {
     Counters.Counter private _tokenTotalListings;  // Starts from 0
     Counters.Counter private _estateListingSold; // Starts from 0
 
-    // Initialize the salePrice of each NFT and define the contract owner
-    // uint256 salePrice = 0.01 ether;
     address payable private owner;
     address payable private _regulatorAccount;
 
@@ -76,7 +74,7 @@ contract NFTRealEstateMarketplace is ReentrancyGuard {
     /* === CONSTRUCTOR === */
     constructor(address regulatorAccount) {
         // Initialize the owner to be the account that deployed the contract
-        // Initialize the regulators account
+        // Initialize the regulators or government account
         owner = payable(msg.sender);
         _regulatorAccount = payable(regulatorAccount);
     }
@@ -270,7 +268,7 @@ contract NFTRealEstateMarketplace is ReentrancyGuard {
             msg.sender
         );
 
-    }  
+    }
 
 
 }
