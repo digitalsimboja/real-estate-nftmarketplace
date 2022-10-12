@@ -14,8 +14,8 @@ export default function Navbar() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('#171923', 'gray.800')}
-        color={"white"}
+        bg={useColorModeValue('white', 'gray.800')}
+        color={useColorModeValue('gray.600', 'white')}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -27,11 +27,13 @@ export default function Navbar() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Link href="/">
             <Text
-              textAlign={useBreakpointValue({ base: "center", md: "left" })}
-              fontFamily={"heading"}
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              color={useColorModeValue('gray.800', 'white')}
+
               fontSize="4xl"
               fontWeight={"bold"}
-              color={useColorModeValue("purple.200", "gray.200")}
+
             >
               NFT Real Estate
             </Text>

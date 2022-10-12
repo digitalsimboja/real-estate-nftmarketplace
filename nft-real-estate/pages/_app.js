@@ -13,8 +13,8 @@ import { SUBGRAPH_URL } from "../constants";
 
 
 const polygonChain = {
-  id: 137,
-  name: "Matic Mainnet",
+  id: 80001,
+  name: "Mumbai Testnet",
   network: "polygon",
   nativeCurrency: {
     decimals: 18,
@@ -22,7 +22,7 @@ const polygonChain = {
     symbol: "MATIC",
   },
   rpcUrls: {
-    default: " https://polygon-rpc.com",
+    default: "  https://rpc-mumbai.maticvigil.com/",
   },
   blockExplorers: {
     default: {
@@ -30,7 +30,7 @@ const polygonChain = {
       url: "https://polygonscan.com/",
     },
   },
-  testnet: false,
+  testnet: true,
 };
 
 const { chains, provider } = configureChains(
