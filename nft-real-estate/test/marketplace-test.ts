@@ -2,7 +2,7 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { expect } from "chai";
 import { BigNumber } from "ethers";
 import { ethers } from "hardhat";
-import { NFTRealEstateMarketplace, EstateNFT } from "../typechain-types/contracts";
+import type { NFTRealEstateMarketplace, EstateNFT } from "../typechain-types/contracts";
 
 let marketplace: NFTRealEstateMarketplace;
 let estateNFT: EstateNFT;
