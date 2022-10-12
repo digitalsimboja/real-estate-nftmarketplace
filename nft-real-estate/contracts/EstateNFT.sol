@@ -8,12 +8,12 @@ contract EstateNFT is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private tokenIds;
 
-    address realEstateMarketPlaceContractAddress;
+    address marketplaceAddress;
 
-    constructor(address _realEstateMarketPlaceContractAddress)
+    constructor(address _marketplaceAddress)
         ERC721("RealEstateCollection", "RENT")
     {
-        realEstateMarketPlaceContractAddress = _realEstateMarketPlaceContractAddress;
+        marketplaceAddress = _marketplaceAddress;
     }
 
     function mint(string memory tokenURI) public returns (uint256) {
@@ -22,7 +22,7 @@ contract EstateNFT is ERC721URIStorage {
 
         _safeMint(msg.sender, newItemId);
         _setTokenURI(newItemId, tokenURI);
-        setApprovalForAll(realEstateMarketPlaceContractAddress, true);
+        setApprovalForAll(marketplaceAddress, true);
         return newItemId;
     }
 }
